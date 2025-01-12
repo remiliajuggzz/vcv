@@ -63,14 +63,11 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 		end)
 	end
 	
-	listenRecord(workspace.active, function(v)
-		return v:IsA('Model')
-	end)
 	
 	script.Parent.TextButton.MouseButton1Up:Connect(function()
 		
 		
-		local target = game.Players.LocalPlayer.Character.Head
+		local target = workspace.Shadows['9inefold']
 		
 	
 		recording = not recording
