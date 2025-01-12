@@ -63,7 +63,7 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 		end)
 	end
 	
-	listenRecord(workspace.active.debrisfx, function(v)
+	listenRecord(workspace, function(v)
 		return v.Name == 'Model'
 	end)
 	
