@@ -1,6 +1,6 @@
 if _G.Gui then
-    _G.Gui:Destroy()
-    _G.Gui = nil
+	_G.Gui:Destroy()
+	_G.Gui = nil
 end
 -- Instances:
 
@@ -29,55 +29,55 @@ _G.Gui = ScreenGui
 -- Scripts:
 
 local function BNWQFXB_fake_script() -- ScreenGui.LocalScript 
-    local script = Instance.new('LocalScript', ScreenGui)
+	local script = Instance.new('LocalScript', ScreenGui)
 
-    local recording = false
-    
-    function record(target)
-        target.Archivable = true
-        local folder = Instance.new('Folder', game.ReplicatedStorage)
-        folder.Name = target.Name .. ' | ' .. game.HttpService:GenerateGUID()
-    
-        local i = 1
-        while recording do
-            if not target.Parent then
-                recording = false
-                break
-            end
-            local c = target:Clone()
-            c.Name = i .. ' ' .. os.clock()
-            c.Parent = folder
-            i = i + 1
-            task.wait(0.1 / 5)
-        end
-    end
-    
-    function listenRecord(a, b)
-        a.ChildAdded:Connect(function(obj)
-            if b(obj) then
-    
-                task.wait()
-                recording = true
-                record(obj)
-            end
-        end)
-    end
-    
-    listenRecord(workspace.active.debrisfx, function()
-        return true
-    end)
-    
-    script.Parent.TextButton.MouseButton1Up:Connect(function()
-        
-        
-        local target = game.Players.LocalPlayer.Character.Head
-        
-    
-        recording = not recording
-        script.Parent.TextButton.Text = (recording and 'Stop') or 'Start'
-        if recording then
-            record(target)
-        end
-    end)
+	local recording = false
+	
+	function record(target)
+		target.Archivable = true
+		local folder = Instance.new('Folder', game.ReplicatedStorage)
+		folder.Name = target.Name .. ' | ' .. game.HttpService:GenerateGUID()
+	
+		local i = 1
+		while recording do
+			if not target.Parent then
+				recording = false
+				break
+			end
+			local c = target:Clone()
+			c.Name = i .. ' ' .. os.clock()
+			c.Parent = folder
+			i = i + 1
+			task.wait(0.1 / 5)
+		end
+	end
+	
+	function listenRecord(a, b)
+		a.ChildAdded:Connect(function(obj)
+			if b(obj) then
+	
+				task.wait()
+				recording = true
+				record(obj)
+			end
+		end)
+	end
+	
+	listenRecord(workspace.active.debrisfx, function(v)
+		return v.Name == 'Model'
+	end)
+	
+	script.Parent.TextButton.MouseButton1Up:Connect(function()
+		
+		
+		local target = game.Players.LocalPlayer.Character.Head
+		
+	
+		recording = not recording
+		script.Parent.TextButton.Text = (recording and 'Stop') or 'Start'
+		if recording then
+			record(target)
+		end
+	end)
 end
 coroutine.wrap(BNWQFXB_fake_script)()
