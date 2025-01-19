@@ -63,7 +63,7 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 		end)
 	end
 
- 	listenRecord(workspace.active, function(c) return c.Name == 'Part' end) 
+ 	listenRecord(workspace.active.watertraps, function(c) return true end) 
 	
 	script.Parent.TextButton.MouseButton1Up:Connect(function()
 		
