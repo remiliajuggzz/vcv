@@ -63,12 +63,12 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 		end)
 	end
 
- 	listenRecord(workspace.active.watertraps, function(c) return true end) 
+ 	--listenRecord(workspace.active.watertraps, function(c) return true end) 
 	
 	script.Parent.TextButton.MouseButton1Up:Connect(function()
 		
 		
-		local target = workspace.Shadows['9inefold']
+		local target = workspace['9inefold']
 		
 	
 		recording = not recording
