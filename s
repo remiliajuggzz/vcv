@@ -32,12 +32,12 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local recording = false
-	
+
 	function record(target)
 		target.Archivable = true
 		local folder = Instance.new('Folder', game.ReplicatedStorage)
 		folder.Name = target.Name .. ' | ' .. game.HttpService:GenerateGUID()
-	
+
 		local i = 1
 		while recording do
 			if not target.Parent then
@@ -51,11 +51,11 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 			task.wait(0.1 / 5)
 		end
 	end
-	
+
 	function listenRecord(a, b)
 		a.ChildAdded:Connect(function(obj)
 			if b(obj) then
-	
+
 				task.wait()
 				recording = true
 				record(obj)
@@ -63,14 +63,12 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 		end)
 	end
 
- 	--listenRecord(workspace.active.watertraps, function(c) return true end) 
-	
 	script.Parent.TextButton.MouseButton1Up:Connect(function()
-		
-		
-		local target = workspace['9inefold']
-		
-	
+
+
+		local target = workspace.world.map.Moosewood.Inn.Door
+
+
 		recording = not recording
 		script.Parent.TextButton.Text = (recording and 'Stop') or 'Start'
 		if recording then
