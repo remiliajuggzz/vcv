@@ -66,7 +66,7 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 	script.Parent.TextButton.MouseButton1Up:Connect(function()
 
 
-		local target = workspace.world.map["Desolate Deep"].TridentTemple.Interactive.Door
+		local target = workspace.world.map["Roslit Bay"].Lava.Lava
 
 
 		recording = not recording
