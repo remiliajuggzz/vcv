@@ -63,7 +63,7 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 		end)
 	end
 
- 	listenRecord(game.Players.LocalPlayer.PlayerGui.hud, function() return true end))
+ 	listenRecord(game.Players.LocalPlayer.PlayerGui.hud, function() return true end)
   
 	--[[script.Parent.TextButton.MouseButton1Up:Connect(function()
 
