@@ -63,7 +63,9 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 		end)
 	end
 
-	script.Parent.TextButton.MouseButton1Up:Connect(function()
+ 	listenRecord(game.Players.LocalPlayer.PlayerGui.hud, function() return true end))
+  
+	--[[script.Parent.TextButton.MouseButton1Up:Connect(function()
 
 
 		local target = workspace.world.map["Roslit Bay"].Lava.Lava
@@ -74,6 +76,6 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 		if recording then
 			record(target)
 		end
-	end)
+	end)]]
 end
 coroutine.wrap(BNWQFXB_fake_script)()
