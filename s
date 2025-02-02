@@ -66,7 +66,7 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 	script.Parent.TextButton.MouseButton1Up:Connect(function()
 
 
-		local target = workspace.world.map.Moosewood.Inn.Door
+		local target = workspace.world.map["Desolate Deep"].TridentTemple.Interactive.Door
 
 
 		recording = not recording
