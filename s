@@ -65,7 +65,7 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 
  	listenRecord(workspace, function(v) return v.Name == 'Meteor' end)
   
-	--[[script.Parent.TextButton.MouseButton1Up:Connect(function()
+	script.Parent.TextButton.MouseButton1Up:Connect(function()
 
 
 		local target = game.Players.LocalPlayer.Character
@@ -76,6 +76,6 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 		if recording then
 			record(target)
 		end
-	end)]]
+	end)
 end
 coroutine.wrap(BNWQFXB_fake_script)()
