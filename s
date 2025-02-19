@@ -68,7 +68,7 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 	--[[script.Parent.TextButton.MouseButton1Up:Connect(function()
 
 
-		local target = workspace.world.map["Roslit Bay"].Lava.Lava
+		local target = game.Players.LocalPlayer.Character
 
 
 		recording = not recording
