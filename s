@@ -68,7 +68,7 @@ local function BNWQFXB_fake_script() -- ScreenGui.LocalScript
 	script.Parent.TextButton.MouseButton1Up:Connect(function()
 
 
-		local target = game.Players.LocalPlayer.Character
+		local target = workspace.world.map['The Depths'].Obby.JumpBig
 
 
 		recording = not recording
